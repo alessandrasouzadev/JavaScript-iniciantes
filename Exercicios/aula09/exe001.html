@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(71, 201, 237);
+            color: white;
+            font: normal 15pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado!</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        /*
+        O QUE É DOM? Modelo de objetos para documentos (Document Object Model)
+
+        Árvore DOM: começa na raiz, e essa raiz dentro do navegador é chamada de 'window - janela'.
+        tudo dentro do JavaScript está dentro de um objeto chamado window
+        
+        Window
+        → location: qual é a localização do seu site?
+        MODELO DE ARVORE HIERARQUICA DO SITE ATUAL
+        → document: documento atual > html > body(corpo) head(cabeça)
+            body > h1, p, p (> strong) div
+            head > meta e title 
+        → history: histórico
+
+        ELEMENTOS PARA SE NAVEGAR NA ÁRVORE DOM
+        1. Por Marca: getElementsByTagName() +1 objeto precisa de parâmetro.
+        2. Por ID: getElementById()
+        3. Por Nome: getElementsByName() +1 objeto precisa de parâmetro.
+        4. Por Classe: getElementsByClassName()
+        5. Por Seletor: querySelector()
+                        querySelectorAll()
+                        + recomendável pelos manuais
+
+        COMANDOS
+        ►    getElementsByTagName(): metódo da interface documento que retorna um elemento com o nome da tag fornecida pelo dev.
+
+        ‼  SINTAXE
+        var elements = document.getElementsByTagName(name);
+        ►     .innerText: representa o conteúdo textual. Utilizado como um 'getter' é um retorno de maneira aproximada do texto
+
+        ‼  SINTAXE
+        name.innerText
+        ►      .innerHTML: é a mesma função do .innerText porém aceita o complemento de comando de HTML na semântica.
+        ‼   SINTAXE
+        name.innerHTML
+        */
+       var corpo = window.document.body
+       var p1 = window.document.getElementsByTagName('p')[0]
+       var p2 = window.document.getElementsByTagName('p')[1]
+       var d= window.document.getElementById('msg')
+       var d1 = window.document.querySelector('div#msg')
+
+       window.document.write('O primeiro paragráfo está escrito assim: ' + p1.innerText)
+       window.document.write('Segundo Paragráfo está escrito assim: ' + p2.innerHTML)
+       d.style.background = 'blue'
+
+       // comando resumido:
+       d.innerText = 'Estou aguardando....' 
+       // comando completo
+       window.document.getElementById('msg').innerText = 'Olá'
+       
+
+       //HTML dentro de JavaScript
+       corpo.style.background = 'lightblue'
+       p1.style.color = 'gray'
+       d1.style.color = 'lightgray'
+       
+    </script>
+</body>
+</html>

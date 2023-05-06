@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body{
+            background-color: lightskyblue;
+        }
+
+        div#area{
+            font: normal 15pt arial ;
+            background-color: rgb(152, 203, 152);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--Criação de EVENTOS DOM dentro do próprio HTML-->
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    
+    <script> 
+    /*CRIANDO UMA FUNÇÃO.
+    Função: ao clicar modifica a escrita.
+    1. a função é definida e denominada diretamente na área afetada no caso do exemplo na div com o parâmetro: onclick="clicar()"
+    2. ao instânciar a função com nome criado, logo em seguida é criado uma variável com a modificação da palavrada referida.
+    
+    DICA:
+    nos 3 exemplos descritos abaixo a variavel A poderia ser definida 3 vezes em cada function o que é extremamente possível já que a criação da variavél é local, ou seja tal váriavel só existe e pode ser instância no seu próprio escopo, mas para simplificar  facilitar a compreensão é melhor criar a variável fora do escopo das funções tornando assim global.
+    
+    DICA:
+    Caso ocorra de mesmo descrevendo as funções não funcionar, tente 'inspecionar' o código e analise o erro na linha descrita.*/
+        var a = window.document.getElementById('area')
+    /*Criação de EVENTOS DOM dentro do próprio JavaScript
+    → addEventListener: presta atenção em um determinado evento.
+    É só instânciar as funções e denomina-lás*/
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar(){
+           a.innerHTML = 'Entrou!'
+        }
+        function sair(){
+            a.innerText = 'Saiu!'
+        }
+        /*
+
+        EVENTOS DOM: utiizados para notificar o código de novidades durante a navegação do usuário.
+        Os eventos podem ser disparados tanto na parte HTML quanto na parte de JavaScript.
+        
+        FUNÇÃO: Conjunto de códigos que só serão executados quando o evento ocorrer.
+        ‼ SINTAXE
+        ex: function ação(parâmetros){
+                bloco
+        }
+        */
+    </script>
+</body>
+</html>
