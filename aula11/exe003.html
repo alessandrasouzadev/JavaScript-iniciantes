@@ -7,22 +7,116 @@
     <title>DETRAN</title>
 </head>
 <body>
+
+
+
+    <!--EXERCICIO 001 HTML + JS-->
     <h1>Sistema de Multas</h1>
-    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> <Km>
-    <input type="button" value="Verificar" onclick="calcular()">
-    <div id="res"></div>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> <!--input do valor-->
+    <input type="button" value="Verificar" onclick="calcular()"> <!--input do botão-->
+    <div id="res"></div> <!--div com a resposta-->
     <script>
 
         function calcular(){
-            var txtv = window.document.getElementById('txtvel')
-            var res = window.document.getElementById('res')
-            var vel = Number(txtv.value)
-            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel} Km/h</strong></p>`
-            if (vel > 60){
+            var txtv = window.document.getElementById('txtvel') // criação de uma variavel do js instânciando o valor do input 'txtvel'
+            var res = window.document.getElementById('res') //criação de uma variavel do js instânciando o valor da div 'res'
+            var vel = Number(txtv.value)  // criação de uma variavel no js convertendo o valor de 'txtv' para número
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel} Km/h</strong></p>` // variavel 'res' receberá o valor formatado com HTML
+            if (vel > 60){ // condição simples
                 res.innerHTML += `<P>Você esta <strong>MULTADO</strong> por excesso de velocidade</P>`
             }
             res.innerHTML += `<p>Dirija sempre com segurança!</p>`
         }
+
+
+
+        /*EXERCICIO 001 - SOMENTE COM NODEJS*/
+        var vel = 78.2 // condição simples
+        console.log(`A velocidade do seu carro é de ${vel} Km/h`)
+        if (vel > 60){ 
+            console.log('Você ultrapassou a velocidade permitida. MULTADO!')
+        }
+        console.log('Dirija sempre usando o cinto de segurança!')
+
+
+
+        /*EXERCICIO 002 - SOMENTE COM NODEJS*/
+        var pais = 'EUA' // condição composta
+        console.log(`Vivendo em ${pais}`)
+        if (pais == 'Brasil'){ //Condição Composta
+            console.log('Brasileiro!')
+        } else {
+            console.log('Estrangeiro!')
+        }
+
+
+
+        /*EXERCICIO 003 - SOMENTE COM NODEJS*/
+        var idade = 12 //condição aninhada
+        console.log(`Voce tem ${idade} anos.`)
+        if (idade < 16){
+            console.log('NÃO vota!')
+        } else if (idade < 18 || idade > 65){
+            console.log('Voto OPCIONAL!')
+        } else {
+            console.log('Voto OBRIGATÓRIO!')
+        }
+
+
+        /*EXERCICIO 004 - SOMENTE COM NODEJS*/
+        var agora = new Date() //condição aninhada com utilização de instânciamente de horário atual do sistema. 
+        var hora = agora.getHours()
+        console.log(`Agora são exatamente ${hora} horas.`)
+        if (hora < 12) {
+            console.log('Bom dia!')
+        } else if (hora <= 18){
+            console.log('Boa tarde!')
+        } else {
+            console.log('Boa noite!')
+        }
+
+
+        /*EXERCICIO 005 - SOMENTE COM NODEJS*/
+        var agora = new Date()
+        var diaSem = agora.getDay()
+        /*
+            0 = Domingo
+            1 = Segunda
+            2 = Terça
+            3 = Quarta 
+            4 = Quinta
+            5 = Sexta
+            6 = Sábado */
+
+        console.log(diaSem)
+
+        switch (diaSem){
+            case 0:
+                console.log('Domingo')
+                break
+            case 1:
+                console.log('Segunda - Feira')
+                break
+            case 2:
+                console.log('Terça - Feira')
+                break
+            case 3:
+                console.log('Quarta - Feira')
+                break
+            case 4:
+                console.log('Quinta - Feira')
+                break
+            case 5:
+                console.log('Sexta - Feira')
+                break
+            case 6:
+                console.log('Sábado')
+                break
+            default:
+                console.log('[ERRO] Dia Inválido')
+                break //opcional
+            }
+
         /*CONDIÇÕES
         possibilidades de resultados
         
@@ -39,6 +133,37 @@
                 }
 
                 ASSISTIR AO FINAL DO VIDEO DE CONDIÇÕES PARTE 1 TEM DESAFIO PENDENTE LÁ
+
+            → Condições Aninhadas: + de 2 possibilidades
+                ex: if (condição1) {
+                    bloco1
+                } else {
+                    if (cond2) {
+                        bloco2
+                    } else {
+                        bloco3
+                    }
+                }
+
+            → Condições Múltiplas: possibilidades com valores fixos
+                ex: switch (expressão){
+                        case valor 1:
+                            bloco
+                            break - OBRIGATÓRIO
+                        case valor 2:
+                            bloco
+                            break - OBRIGATÓRIO
+                        case valor 3:
+                            bloco
+                            break - OBRIGATÓRIO
+                        case valor 4:
+                            bloco
+                            break - OBRIGATÓRIO
+                        default:
+                            bloco
+                            break - OPCIONAL
+                }
+
             */
     </script>
     
