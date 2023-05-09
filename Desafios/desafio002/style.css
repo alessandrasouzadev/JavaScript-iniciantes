@@ -11,7 +11,7 @@ header{
 
 section{
     width: 476px;
-    height: 500px;
+    height: 476px;
     background-color: white;
     margin: auto;
     border-radius: 10px;
@@ -21,25 +21,10 @@ section{
     padding-bottom: 25px;
 }
 
-form#radio{
-    padding-top: 15px;
-    padding-bottom: 15px;
+div#res > p{
+    margin-bottom: 50px;
 }
 
-div#msg{
-    text-align: center;
-    font: normal 10pt arial;
-}
-
-div#msg{
-    margin-bottom: -76px;
-    font-size: 16px;
-    padding-top: 23px;
-}
-
-section > div#foto{
-    text-align: center;
-}
 
 footer{
     font-style: italic;
